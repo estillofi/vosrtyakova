@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ксения Вострякова</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<aside class="sidebar">
+  <div>
+    <a class="brand" href="index.html">
+      <span class="name">Ксения Вострякова</span>
+      <span class="tagline">Живопись маслом</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="about.html">Обо мне</a></li>
+        <li><a href="projects.html">Проекты</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="social">
+    <nav class="variant-switcher" aria-label="Варианты сайта">
+      <a href="../index.html">Скролл</a>
+      <a href="index.html" class="active">Карусель</a>
+      <a href="../grid/index.html">Сетка</a>
+    </nav>
+    <a href="https://www.instagram.com/kseniya_vostryakova" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</aside>
+
+<div class="content">
+  <div class="carousel">
+    <div class="carousel-track" id="track">
+      <div class="carousel-slide"><img src="images/hammock.png" alt="«Какой сегодня день?»"></div>
+      <div class="carousel-slide"><img src="images/triptych.png" alt="Триптих «Тургояк»"></div>
+      <div class="carousel-slide"><img src="images/railing.png" alt="«She's done»"></div>
+      <div class="carousel-slide"><img src="images/bloom.png" alt="«Цветение»"></div>
+      <div class="carousel-slide"><img src="images/hideseek.png" alt="«Прятки в ботаническом саду»"></div>
+      <div class="carousel-slide"><img src="images/lemurs.png" alt="Из серии"></div>
+    </div>
+    <button class="carousel-arrow prev" id="prev" aria-label="Предыдущая">&#8592;</button>
+    <button class="carousel-arrow next" id="next" aria-label="Следующая">&#8594;</button>
+    <div class="carousel-dots" id="dots"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

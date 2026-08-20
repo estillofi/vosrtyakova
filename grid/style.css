@@ -1,0 +1,294 @@
+:root {
+  --ink: #111111;
+  --muted: #949494;
+  --line: #ececec;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: var(--ink);
+}
+
+body {
+  font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+/* ---------- Top nav ---------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.6rem 3rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar .logo {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.topbar nav {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.variant-switcher {
+  padding-left: 2.4rem;
+  border-left: 1px solid var(--line);
+}
+
+.topbar nav a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.topbar nav a:hover,
+.topbar nav a.active {
+  color: var(--ink);
+}
+
+.lang-toggle {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+}
+
+.lang-toggle button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0.2rem;
+  text-transform: uppercase;
+}
+
+.lang-toggle button.active { color: var(--ink); }
+
+/* Language switching is handled in script.js by swapping textContent
+   between the data-ru / data-en attributes — no CSS visibility toggle. */
+
+/* ---------- Home / split hero ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 78px);
+}
+
+.hero-text {
+  padding: 5rem 5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 620px;
+}
+
+.hero-text p {
+  margin: 0 0 1.4rem;
+  font-size: 1.05rem;
+}
+
+.hero-text p:last-child { margin-bottom: 0; }
+
+.hero-photo {
+  overflow: hidden;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Generic page ---------- */
+
+.page {
+  padding: 4rem 3rem 6rem;
+}
+
+.page-title {
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 3rem;
+}
+
+/* ---------- About + CV ---------- */
+
+.about {
+  max-width: 680px;
+}
+
+.about .bio-facts p {
+  margin: 0 0 0.3rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.about .bio-facts {
+  margin-bottom: 2.6rem;
+  padding-bottom: 2.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.about .statement p {
+  margin: 0 0 1.3rem;
+  font-size: 1.05rem;
+}
+
+.cv {
+  max-width: 680px;
+  margin-top: 4rem;
+}
+
+.cv-section {
+  margin-bottom: 2.6rem;
+}
+
+.cv-section h2 {
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 0.9rem;
+}
+
+.cv-section p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ---------- Paintings grid ---------- */
+
+.year-group {
+  margin-bottom: 3.5rem;
+}
+
+.year-group h2 {
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  color: var(--muted);
+  margin: 0 0 1.2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+.grid figure {
+  margin: 0;
+}
+
+.grid img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  background: #f7f7f7;
+}
+
+.grid figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+}
+
+.grid figcaption .title {
+  display: block;
+  font-style: italic;
+}
+
+.grid figcaption .meta {
+  display: block;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+/* ---------- Contacts ---------- */
+
+.contacts {
+  max-width: 480px;
+}
+
+.contacts p {
+  margin: 0 0 1.4rem;
+  font-size: 1rem;
+}
+
+.contacts .links {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.contacts .links a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--muted);
+}
+
+footer.site-footer {
+  padding: 2.5rem 3rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+  .topbar { padding: 1.2rem 1.5rem; flex-wrap: wrap; gap: 0.8rem; }
+  .topbar nav { gap: 1.2rem; flex-wrap: wrap; }
+  .topbar-right { flex-wrap: wrap; gap: 1rem; }
+  .variant-switcher { padding-left: 0; border-left: none; gap: 1rem; }
+
+  .hero { grid-template-columns: 1fr; }
+  .hero-text { padding: 2.5rem 1.5rem; max-width: none; }
+  .hero-photo img { height: 60vh; }
+
+  .page { padding: 2.5rem 1.5rem 4rem; }
+
+  .grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .grid img { height: 200px; }
+}
+
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
+}
