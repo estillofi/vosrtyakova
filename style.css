@@ -206,6 +206,7 @@ a { color: inherit; }
 
 .grid figure {
   margin: 0;
+  min-width: 0;
 }
 
 .grid-item {
@@ -227,7 +228,7 @@ a { color: inherit; }
   width: 100%;
   height: 260px;
   object-fit: contain;
-  background: #dcdcdc;
+  background: #ffffff;
   transition: transform 0.5s ease;
 }
 
@@ -244,9 +245,10 @@ a { color: inherit; }
 }
 
 .grid figcaption .title {
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   text-align: left;
   font-style: italic;
+  white-space: nowrap;
 }
 
 .grid figcaption .meta {
