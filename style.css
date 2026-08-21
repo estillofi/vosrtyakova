@@ -92,11 +92,11 @@ a { color: inherit; }
 }
 
 .hero-text {
-  padding: 5rem 3rem 3rem 9rem;
+  padding: 5rem 2rem 3rem 9rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 620px;
+  max-width: 800px;
 }
 
 .hero-text p {
@@ -397,7 +397,11 @@ a { color: inherit; }
 @media (max-width: 860px) {
   .topbar { padding: 1.2rem 1.5rem; flex-wrap: wrap; gap: 0.8rem; }
 
+  .topbar .logo { order: 1; }
+  .lang-toggle { order: 2; }
+
   .topbar nav {
+    order: 3;
     gap: 1rem;
     flex-wrap: nowrap;
     width: 100%;
