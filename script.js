@@ -144,24 +144,26 @@ if (lightbox) {
 
 /* ---------- Preload paintings on the homepage ---------- */
 
+// Thumbnails only - these are what the grid actually displays.
+// Full-resolution originals load on demand when the lightbox opens.
 const PAINTING_IMAGES = [
-  'images/hammock.jpg',
-  'images/triptych.png',
-  'images/railing.jpeg',
-  'images/bloom.png',
-  'images/hideseek.png',
-  'images/lemurs.png',
-  'images/IMG_1818.jpeg',
-  'images/IMG_1987.jpeg',
-  'images/IMG_2470.jpeg',
-  'images/IMG_2486.jpeg',
-  'images/IMG_2488.jpeg',
-  'images/IMG_3170-2.jpg',
-  'images/IMG_3171.jpeg',
-  'images/IMG_3184.jpg',
-  'images/IMG_3677.jpg',
-  'images/IMG_4118-2.jpg',
-  'images/IMG_4283.jpg',
+  'images/thumbs/hammock.jpg',
+  'images/thumbs/triptych.jpg',
+  'images/thumbs/railing.jpg',
+  'images/thumbs/bloom.jpg',
+  'images/thumbs/hideseek.jpg',
+  'images/thumbs/lemurs.jpg',
+  'images/thumbs/IMG_1818.jpg',
+  'images/thumbs/IMG_1987.jpg',
+  'images/thumbs/IMG_2470.jpg',
+  'images/thumbs/IMG_2486.jpg',
+  'images/thumbs/IMG_2488.jpg',
+  'images/thumbs/IMG_3170-2.jpg',
+  'images/thumbs/IMG_3171.jpg',
+  'images/thumbs/IMG_3184.jpg',
+  'images/thumbs/IMG_3677.jpg',
+  'images/thumbs/IMG_4118-2.jpg',
+  'images/thumbs/IMG_4283.jpg',
 ];
 
 if (document.body.dataset.preload === 'paintings') {
