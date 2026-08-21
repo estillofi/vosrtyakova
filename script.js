@@ -1,3 +1,55 @@
+/* ---------- Caption marquee (technique / year, when it doesn't fit) ---------- */
+/* Declared first: setLang() below calls this on its very first,
+   synchronous invocation, before the rest of the file has run. */
+
+const HOLD_MS = 3000;
+const SCROLL_PX_PER_S = 22;
+const MIN_SCROLL_MS = 1800;
+
+function refreshMarquees() {
+  document.querySelectorAll('.grid figcaption .meta').forEach((meta) => {
+    const inner = meta.querySelector('.meta-inner');
+    if (!inner) return;
+
+    if (inner._marqueeAnim) {
+      inner._marqueeAnim.cancel();
+      inner._marqueeAnim = null;
+    }
+    inner.style.transform = 'translateX(0)';
+
+    const overflow = inner.scrollWidth - meta.clientWidth;
+    if (overflow <= 1) return;
+
+    const scrollMs = Math.max(MIN_SCROLL_MS, (overflow / SCROLL_PX_PER_S) * 1000);
+    const total = HOLD_MS * 2 + scrollMs * 2;
+
+    const at = (ms) => Math.min(1, ms / total);
+
+    inner._marqueeAnim = inner.animate([
+      { transform: 'translateX(0)', offset: 0 },
+      { transform: 'translateX(0)', offset: at(HOLD_MS) },
+      { transform: `translateX(-${overflow}px)`, offset: at(HOLD_MS + scrollMs) },
+      { transform: `translateX(-${overflow}px)`, offset: at(HOLD_MS + scrollMs + HOLD_MS) },
+      { transform: 'translateX(0)', offset: 1 },
+    ], {
+      duration: total,
+      iterations: Infinity,
+      easing: 'linear',
+    });
+  });
+}
+
+if (document.querySelector('.grid')) {
+  window.addEventListener('load', refreshMarquees);
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(refreshMarquees, 200);
+  });
+}
+
+/* ---------- Language toggle ---------- */
+
 const ruBtn = document.getElementById('lang-ru');
 const enBtn = document.getElementById('lang-en');
 const i18nEls = document.querySelectorAll('[data-ru][data-en]');
@@ -10,6 +62,7 @@ function setLang(lang) {
   ruBtn.classList.toggle('active', lang === 'ru');
   enBtn.classList.toggle('active', lang === 'en');
   localStorage.setItem('vostryakova-lang', lang);
+  refreshMarquees();
 }
 
 if (ruBtn && enBtn) {
