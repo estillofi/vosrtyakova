@@ -239,23 +239,22 @@ a { color: inherit; }
 .grid figcaption {
   margin-top: 0.6rem;
   font-size: 0.78rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
 }
 
 .grid figcaption .title {
-  flex: 0 0 auto;
+  display: block;
   text-align: left;
   font-style: italic;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .grid figcaption .meta {
-  flex: 1 1 auto;
-  min-width: 0;
+  display: block;
+  margin-top: 0.15rem;
   color: var(--muted);
-  text-align: right;
+  text-align: left;
   overflow: hidden;
   white-space: nowrap;
 }
