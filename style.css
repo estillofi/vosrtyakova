@@ -238,6 +238,7 @@ a { color: inherit; }
 .grid figcaption {
   margin-top: 0.6rem;
   font-size: 0.78rem;
+  text-align: right;
 }
 
 .grid figcaption .title {
